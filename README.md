@@ -21,6 +21,23 @@
         Password: Abcdef123!
         ```
 
+### Development Setup
+To start and run the local development server,
+1. Initialize and activate a virtualenv:
+```
+$ cd YOUR_PROJECT_DIRECTORY_PATH/
+$ python -m venv env
+$ source env/bin/activate
+```
+2. Install the dependencies:
+```
+$ pip3 install -r requirements.txt
+```
+3. Run the development server:
+```
+$ python app.py
+```
+
 ### Error Handling
 Errors are returned as JSON objects in the following format:
 ```

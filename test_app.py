@@ -23,8 +23,8 @@ class WTOWTestCase(unittest.TestCase):
             "name": "Watcha", "logo_url": "https://wtow-images.s3.us-east-2.amazonaws.com/watcha.png"}
         self.new_movie = {"title": "Thor: Love and Thunder", "director": "Ilhoon Lee", "release_date": "2022-07-05",
                           "poster_url": "https://media-cache.cinematerial.com/p/500x/w6vxvchp/thor-love-and-thunder-movie-poster.jpg?v=1653357775", "ott_platform": ["Netflix"]}
-        self.admin_jwt = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkprSmdla2hsSkh3UTJENlk5LThCVCJ9.eyJpc3MiOiJodHRwczovL2Rldi0zenAxbC1oYS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJkODE5MTg2ZDUzNzAwNTJkMzAwNjFlIiwiYXVkIjoid3RvdyIsImlhdCI6MTY1ODMzNzQxMiwiZXhwIjoxNjU4MzQ0NjEyLCJhenAiOiIxWkJ0ekxsTlFGYnZYUDRpTVJKOHliaWx3RVVaVXN1UCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiYWRkOm1vdmllcyIsImFkZDpwbGF0Zm9ybXMiLCJkZWxldGU6bW92aWVzIiwiZWRpdDptb3ZpZXMiXX0.UfSO4BkaUdH5BNwh8gOe4v_A2mEHQqT6iChT0e5CqxjqSW4Ie_ePGBUZZj7zPP_kRBjzpxGZjnqAIf7K6d658khPFrlNai5ukPAlqt_aJUDxWQ1gBPV1_7ox0yUzTc3qOHGYwCmMbwcavoyzqPVd6vra4RJBFpGBpHc4vjVMqD6PNZqoTAfP-BzL9xasoCjZvebkeTQ8IAUQlpC9Yu-nrQ8ViMITdZVZncIES6TlY7W7T0YwEt_IYQnPGBCT2eVbSfu6rg8XU5xuu8Vf127TWqb5Om5-EFd81vBjM9FQ0oiPhKsrZKbIt11_Ufc0tKVgL5S0Y0Ixv31awEA4dCkcPA'
-        self.viewer_jwt = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkprSmdla2hsSkh3UTJENlk5LThCVCJ9.eyJpc3MiOiJodHRwczovL2Rldi0zenAxbC1oYS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjJkNTZiOWYzYWEwNjQyMWZjMWZiMzgyIiwiYXVkIjoid3RvdyIsImlhdCI6MTY1ODMzODY0MywiZXhwIjoxNjU4MzQ1ODQzLCJhenAiOiIxWkJ0ekxsTlFGYnZYUDRpTVJKOHliaWx3RVVaVXN1UCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiYWRkOm1vdmllcyIsImVkaXQ6bW92aWVzIl19.zue5Q4dE9X3vteqWvGtEwLiyomPhFRnvD2BAzznAIaOnAmoowexINCtsnt7tau3bf7NqT0IBwa7XkTmCpPUWQHw5t8V6YC5xIIMFhpz4scxH3P7B4E8ZpIAOUIi64aWgt96dDuixq9BCHdq-1fyxrZnTIxmJ8x6ACJgJH0uT_5mEcET2sMmTJX7lZmB5KoDG0HQltBLd5p2koajjmqaEJSM-p09CxTX5fmdIvUE5tKwblJAT8x0bXXhHEf55vz6VQDE4iOwIlXcKik_pIWiip_ZwxJKBAhQ3u7eqq4gVeoeWGEVlNiqjgHqXRrUppxTWQAuZjQdyYO71NsCM042Jgg'
+        self.admin_jwt = os.environ['JWT_ADMIN']
+        self.viewer_jwt = os.environ['JWT_VIEWER']
 
         # binds the app to the current context
         with self.app.app_context():
