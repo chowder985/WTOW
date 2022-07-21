@@ -45,7 +45,7 @@ def create_app(test_config=None):
             formatted_platforms = [platform.format() for platform in platforms]
             current_platforms = formatted_platforms[start:end]
 
-            if len(current_platforms) == 0:
+            if len(formatted_platforms) > 0 and (current_platforms) == 0:
                 abort(400)
 
             data = {
@@ -153,7 +153,7 @@ def create_app(test_config=None):
 
             current_movies = formatted_movies[start:end]
 
-            if len(current_movies) == 0:
+            if len(formatted_movies) > 0 and (current_movies) == 0:
                 abort(400)
 
             data = {
