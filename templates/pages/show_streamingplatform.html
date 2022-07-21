@@ -1,0 +1,31 @@
+{% extends 'layouts/main.html' %}
+{% block title %}WTOW{% endblock %}
+{% block content %}
+<div class="row d-flex align-items-center overflow-auto">
+    <div class="col-sm-3">
+        <img src="{{ platform.logo_url }}" style="height: 5rem;width: 5rem;" alt="">
+        <h1>{{ platform.name }} movies (Total: {{ platform.num_movies }})</h1>
+    </div>
+    <ul class="col-sm-9 d-flex flex-sm-row flex-column flex-nowrap overflow-scroll">
+        {% for movie in platform.movies %}
+        <li class="mx-2">
+            <div class="card card-block" style="width: 18rem;">
+                <img src="{{ movie.poster_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ movie.title }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ movie.release_date }}</h6>
+                  <p class="card-text">Directed by {{ movie.director }}</p>
+                  {% for platform in movie.platforms %}
+                  <a href="/streamingplatforms/{{ platform.id }}"><img src="{{ platform.logo_url }}" style="height:3rem;width: 3rem;" alt=""></a>
+                  {% endfor %}
+                  <div class="alter-buttons">
+                    <a href="#" class="btn btn-success">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                  </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

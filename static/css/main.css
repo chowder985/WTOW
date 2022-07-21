@@ -1,0 +1,68 @@
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#content {
+    height: 100%;
+}
+
+#content:nth-child(2) {
+    width: 100%;
+}
+
+img {
+    background-color: black;
+}
+
+img.rounded {
+    border: 1px solid black;
+    height: 14rem;
+    width: 14rem;
+    margin: 1rem;
+}
+
+ul {
+    padding: 0;
+}
+
+ul>li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+a.page-numbers {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    margin: 0 auto 1rem;
+}
+
+.alter-buttons {
+    margin-top: 1rem;
+}
+
+#add-movie-button {
+    height: 100%;
+    border: 1px dashed black;
+    opacity: 0.5;
+}
+
+a.add-movie-link {
+    text-decoration: none;
+    color: black;
+}
+
+.alert {
+    z-index: 1;
+}

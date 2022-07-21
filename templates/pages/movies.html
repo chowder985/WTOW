@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+{% block title %}WTOW | View Movies{% endblock %}
+{% block content %}
+<div style="width: 100%;">
+    <h1>Movies (Total: {{ movies['total_movies'] }})</h1>
+    <ul class="d-flex justify-content-center">
+        {% for num in range(movies['total_movies']//8 + 1) %}
+        <li>
+            <a class="page-numbers" href="/movies?page={{ num+1 }}">{{ num+1 }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <ul class="row row-col-1 row-col-xl-4 row-col-lg-3 ro-col-md-2 g-4 overflow-scroll">
+        {% for movie in movies['current_movies'] %}
+        <li class="col mb-3">
+            <div class="card h-100" style="width: 18rem;">
+                <img src="{{ movie.poster_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ movie.release_date }}</h6>
+                    <p class="card-text">Directed by {{ movie.director }}</p>
+                    {% for platform in movie.platforms %}
+                    <a href="/streamingplatforms/{{ platform.id }}"><img src="{{ platform.logo_url }}" style="height:3rem;width: 3rem;" alt=""></a>
+                    {% endfor %}
+                    <div class="alter-buttons">
+                        <a href="/movies/{{ movie.id }}/edit" class="btn btn-success">Edit</a>
+                        <button data-id="{{ movie.id }}" class="btn btn-danger delete-movie">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+        <li class="col pb-3">
+            <div class="h-100 mx-auto" style="width: 18rem;">
+                <a href="{{ url_for('new_movie') }}" class="add-movie-link">
+                    <div id="add-movie-button" class="d-flex align-items-center justify-content-center rounded">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}

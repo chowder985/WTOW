@@ -1,0 +1,30 @@
+{% extends 'layouts/main.html' %}
+{% block title %}WTOW | Add Movie{% endblock %}
+{% block content %}
+<div class="form-wrapper">
+    <form id="new-movie-submit" class="form">
+        <div class="form-group">
+            <label for="title">Title</label>
+            {{ form.title(class_ = 'form-control', autofocus = true) }}
+        </div>
+        <div class="form-group">
+            <label for="director">Director</label>
+            {{ form.director(class_ = 'form-control', autofocus = true) }}
+        </div>
+        <div class="form-group">
+            <label for="poster_url">Poster URL</label>
+            {{ form.poster_url(class_ = 'form-control', placeholder = 'http://', autofocus = true) }}
+        </div>
+        <div class="form-group">
+            <label for="release_date">Released Date</label>
+            {{ form.release_date(class_ = 'form-control', placeholder='YYYY-MM-DD', autofocus = true) }}
+        </div>
+        <div class="form-group">
+            <label for="ott_platform">Platforms</label>
+            <small>Ctrl+Click to select multiple</small>
+            {{ form.ott_platform(class_ = 'form-control', placeholder='OTT Platforms, separated by commas', autofocus = true) }}
+        </div>
+        <input type="submit" value="Add Platform" class="btn btn-primary btn-lg btn-block">
+    </form>
+</div>
+{% endblock %}

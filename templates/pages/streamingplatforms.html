@@ -1,0 +1,22 @@
+{% extends 'layouts/main.html' %}
+{% block title %}WTOW - View Streaming Platforms{% endblock %}
+{% block content %}
+<div>
+    <h1>Streaming platform</h1>
+    <a href="{{ url_for('new_platform') }}" class="btn btn-primary">Add Platform</a>
+    <ul class="d-flex justify-content-center">
+        {% for num in range(areas['total_platforms']//8 + 1) %}
+        <li>
+            <a class="page-numbers" href="/streamingplatforms?page={{ num+1 }}">{{ num+1 }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <ul class="p-5 d-sm-flex">
+        {% for platform in areas['current_platforms'] %}
+        <li>
+            <a href="/streamingplatforms/{{ platform.id }}"><img src="{{ platform.logo_url }}" class="rounded float-start" alt="{{ platform.name }}"></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
