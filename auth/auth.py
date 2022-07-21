@@ -7,7 +7,7 @@ from urllib.request import urlopen
 
 
 AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
-ALGORITHMS = ['RS256']
+ALGORITHMS = [os.environ['JWT_CODE_SIGNING_SECRET']]
 API_AUDIENCE = 'wtow'
 
 # AuthError Exception

@@ -3,4 +3,5 @@ export DATABASE_URL="postgres://flyuwvgalevcyl:3b1f15f7a9f01ca2b59db70caf550776c
 export AUTH0_DOMAIN="dev-3zp1l-ha.us.auth0.com"
 export AUTH0_CLIENT_ID="1ZBtzLlNQFbvXP4iMRJ8ybilwEUZUsuP"
 export AUTH0_REDIRECT_URI="http://127.0.0.1:8080/"
+export JWT_CODE_SIGNING_SECRET="RS256"
 echo "setup.sh script executed successfully!"
